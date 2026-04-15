@@ -1,0 +1,1 @@
+import webbrowser ; webbrowser.open("/home/impy/Escritorio/plataforma/sitios/calendarizacion/index.html")

@@ -1,0 +1,272 @@
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================= */
+:root {
+    /* Paleta de Colores - Salud Mental & Corporativo */
+    --color-fondo: #f4f7f9;        /* Gris azulado muy claro */
+    --color-oscuro: #1a1d23;       /* Fondo de Header/Footer (Charcoal) */
+    --color-primario: #1a508b;     /* Azul profesional (Confianza) */
+    --color-secundario: #3498db;   /* Azul claro para detalles y links */
+    --color-texto-p: #4a4a4a;      /* Gris oscuro para párrafos */
+    --color-texto-light: #cbd5e0;  /* Gris claro para textos sobre oscuro */
+    --white: #ffffff;
+    
+    /* Fuentes */
+    --font-main: "Jura", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-p);
+    line-height: 1.6;
+    padding-top: 80px; /* Espacio para el header fijo */
+}
+
+/* =========================================
+   2. NAVEGACIÓN (HEADER)
+   ========================================= */
+.main-header {
+    background-color: var(--color-oscuro);
+    width: 100%;
+    padding: 1.2rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo span {
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-texto-light);
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link:hover {
+    color: var(--white);
+}
+
+/* Indicador de página activa y hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-secundario);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--white);
+    font-weight: 600;
+}
+
+/* =========================================
+   3. ESTRUCTURA PRINCIPAL (MAIN)
+   ========================================= */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    min-height: 80vh;
+}
+
+/* Sección de introducción de texto */
+.intro-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+main h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #5d6d7e;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+
+main p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--color-texto-p);
+    margin-bottom: 25px;
+    text-align: justify;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main p strong {
+    font-weight: 600;
+    color: var(--color-primario);
+}
+
+/* Contenedor de Calendly */
+#calendly-booking {
+    margin-top: 50px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    overflow: hidden;
+    min-height: 600px; /* Evita saltos de carga */
+}
+
+/* =========================================
+   4. PIE DE PÁGINA (FOOTER)
+   ========================================= */
+footer {
+    background-color: var(--color-oscuro);
+    color: var(--color-texto-light);
+    padding: 50px 20px;
+    margin-top: 100px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.footer-info p {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* =========================================
+   5. OPTIMIZACIÓN MÓVIL (RESPONSIVE)
+   ========================================= */
+
+/* Tabletas (menor a 992px) */
+@media (max-width: 992px) {
+    main h1 {
+        font-size: 2.3rem;
+    }
+}
+
+/* Celulares (menor a 768px) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+        font-size: 0.85rem;
+    }
+
+    main {
+        padding: 40px 15px;
+    }
+
+    main h1 {
+        font-size: 1.8rem;
+    }
+
+    main h2 {
+        font-size: 1.2rem;
+    }
+
+    main p {
+        font-size: 1rem;
+        text-align: left; /* Mejor lectura en pantallas pequeñas */
+    }
+
+    .footer-container {
+        gap: 20px;
+    }
+}
+
+/* Celulares muy pequeños (menor a 480px) */
+@media (max-width: 480px) {
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .footer-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
