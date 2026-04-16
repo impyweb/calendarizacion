@@ -108,6 +108,84 @@ body {
 }
 
 /* =========================================
+   2.1. SUBMENÚ (DROPDOWN) - INTEGRACIÓN
+   ========================================= */
+
+/* Contenedor del item que tiene el submenú */
+.nav-item-dropdown {
+    position: relative;
+}
+
+/* Estilos del submenú */
+.submenu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%; /* Aparece justo debajo del header */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el menú respecto al texto padre */
+    background-color: var(--color-oscuro); /* Mismo tono que el header */
+    min-width: 240px;
+    padding: 15px 0;
+    list-style: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-top: 3px solid var(--color-secundario); /* Línea de acento arriba */
+    z-index: 1100;
+}
+
+/* Mostrar al hacer hover */
+.nav-item-dropdown:hover .submenu {
+    display: block;
+}
+
+/* Links dentro del submenú */
+.submenu li a {
+    display: block;
+    padding: 12px 25px;
+    color: var(--color-texto-light);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    text-align: left;
+    white-space: nowrap; /* Evita que el texto salte de línea */
+}
+
+/* Hover en los links del submenú */
+.submenu li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    padding-left: 30px; /* Efecto sutil de desplazamiento */
+}
+
+/* Ajuste para el responsive en celulares */
+@media (max-width: 768px) {
+    .nav-item-dropdown:hover .submenu {
+        display: none; /* Desactivamos el hover en móvil para evitar conflictos */
+    }
+    
+    /* Opcional: Si quieres que en móvil se vea siempre, 
+       puedes cambiar .submenu a position: static */
+    .submenu {
+        position: static;
+        transform: none;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .nav-item-dropdown .submenu {
+        display: block; /* En móvil los mostramos todos en lista */
+    }
+
+    .submenu li a {
+        text-align: center;
+        padding: 8px 0;
+        font-size: 0.8rem;
+    }
+}
+
+/* =========================================
    3. ESTRUCTURA PRINCIPAL (MAIN)
    ========================================= */
 main {
@@ -268,5 +346,36 @@ footer {
     .footer-nav {
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+
+
+/* Estilos para el efecto Parallax */
+.parallax-container {
+    /* La ruta que solicitaste */
+    background-image: url('/home/impy/Escritorio/plataforma/sitios/calendarizacion/images/imagenh1.png');
+    
+    /* Altura del banner */
+    height: 400px; 
+    
+    /* CREA EL EFECTO PARALLAX */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* Estética de la marca (Muted & Soft) */
+    margin: 40px 0;
+    border-radius: 8px; /* Opcional: para suavizar las esquinas */
+    filter: brightness(0.9) contrast(0.9) saturate(0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Ajuste para móviles (El efecto 'fixed' suele fallar en iOS/Android) */
+@media (max-width: 768px) {
+    .parallax-container {
+        background-attachment: scroll; /* Se comporta como imagen normal en móvil */
+        height: 250px;
     }
 }
