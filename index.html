@@ -1,66 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Inicio | Mentalia - Clínica de Psicología Integral</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
+
     <header class="main-header">
         <nav class="nav-container">
             <div class="logo">
-                <span>Bienestar Mental</span>
+                <span>Mentalia</span>
             </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
-                    <li><a href="equipo.html" class="nav-link">Nuestro Equipo</a></li>
-                    
-                    <li class="nav-item-dropdown">
-                        <a href="servicios.html" class="nav-link">Servicios <span class="flecha">▾</span></a>
-                        <ul class="submenu">
-                            <li><a href="individual.html">Psicoterapia Individual</a></li>
-                            <li><a href="estudiantes.html">Terapia para Estudiantes</a></li>
-                            <li><a href="talleres.html">Talleres</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="agenda.html" class="nav-link">Agenda tu Cita</a></li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
-                </ul>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li><a href="equipo.html" class="nav-link">Nuestro Equipo</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="servicios.html" class="nav-link">Servicios <span class="flecha">▾</span></a>
+                    <ul class="submenu">
+                        <li><a href="individual.html">Psicoterapia Individual</a></li>
+                        <li><a href="estudiantes.html">Terapia para Estudiantes</a></li>
+                        <li><a href="talleres.html">Talleres</a></li>
+                    </ul>
+                </li>
+                <li><a href="agenda.html" class="nav-link">Agenda tu Cita</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <section class="intro-section">
-            <h1>Mentalia</h1>
-            <h2>Clínica de Psicología Integral</h2>
-
-            <p>
-                Mentalia, es una clínica de salud mental, promotora del bienestar integral; estamos conformados por un equipo de psicólogas altamente calificadas y comprometidas en ofrecer servicios de la más alta calidad para favorecer el bienestar integral, dedicandonos a proporcionar un espacio seguro y compasivo donde todas las personas pueden encontrar apoyo para sus necesidades de salud mental.
-            </p>
-
-            <p>
-                y continua el párrafo y continua el párrafo y continua el párrafo y continua el párrafo  
-            y continua el párrafo y continua el párrafo y continua el párrafo y continua el párrafo 
-            y continua el párrafo y continua el párrafo y continua el párrafo y continua el párrafo 
-            </p>
+        <section class="hero-parallax" style="background-image: url('images/imagenh1.png');">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Mentalia</h1>
+                    <p>Clínica de Psicología Integral</p>
+                </div>
+            </div>
         </section>
 
-        <div class="cta-container">
-            <a href="index2.html" class="btn-outline">Ver Segunda Propuesta de diseño para el website</a>
-        </div>
+        <section class="welcome-section">
+            <div class="container">
+                <p class="intro-text">
+                    Mentalia, es una clínica de salud mental, promotora del bienestar integral; estamos conformados por un equipo de psicólogas altamente calificadas y comprometidas en ofrecer servicios de la más alta calidad para favorecer el bienestar integral, dedicandonos a proporcionar un espacio seguro y compasivo donde todas las personas pueden encontrar apoyo para sus necesidades de salud mental.
+                </p>
+            </div>
+        </section>
 
-        <div class="calendly-inline-widget" 
-            data-url="https://calendly.com/depyweboaxaca/30min" 
-            style="min-width:320px;height:700px;">
-        </div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <section class="split-section container">
+            <div class="split-content">
+                <h2>Valores y Principios</h2>
+                <p>En Mentalia, nos guiamos por valores de integridad, empatía y respeto hacia cada persona que busca nuestros servicios. Creemos en la importancia de crear una conexión auténtica con quienes acuden a nosotros para trabajar juntos hacia el cambio favorable.</p>
+            </div>
+            <div class="split-image">
+                <img src="images/imagenv1.jpg" alt="Valores Mentalia">
+            </div>
+        </section>
+
+        <section class="split-section split-reverse container">
+            <div class="split-content">
+                <h2>Objetivo</h2>
+                <p>En Mentalia buscamos brindar una atención integral a las personas en el cuidado de su salud mental, dando ayuda, siendo aliados, guías y mentores en alcanzar mayor bienestar en todas las áreas de su vida.</p>
+            </div>
+            <div class="split-image">
+                <img src="images/imagenv2.jpg" alt="Objetivo Mentalia">
+            </div>
+        </section>
+
+        <section class="cards-section container">
+            <div class="card-vertical">
+                <div class="card-image-wrapper">
+                    <img src="images/imagenh2.png" alt="Nuestra Misión">
+                </div>
+                <div class="card-text">
+                    <h3>Misión</h3>
+                    <p>Nuestra clínica tiene como misión proporcionar un espacio seguro y compasivo donde las personas puedan encontrar apoyo para superar los desafíos emocionales y mentales que enfrentan en sus vidas. Nos comprometemos a ofrecer terapias personalizadas y basadas en la evidencia, que promuevan la salud mental. Nos esforzamos por ser un recurso accesible y confiable en nuestra comunidad, trabajando en colaboración con otros profesionales de la salud para brindar un enfoque integral para el cuidado de la salud mental.</p>
+                </div>
+            </div>
+
+            <div class="card-vertical">
+                <div class="card-image-wrapper">
+                    <img src="images/imagenh3.png" alt="Nuestra Visión">
+                </div>
+                <div class="card-text">
+                    <h3>Visión</h3>
+                    <p>Nuestra visión es crear un espacio donde las personas se sientan seguras y apoyadas para explorar su bienestar emocional y alcanzar su máximo potencial. Nos esforzamos por ir evolucionando y creciendo, incorporando las últimas investigaciones y mejores prácticas en nuestra atención, y expandiendo nuestro alcance para llegar a más personas que necesiten apoyo psicológico.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-preview container">
+            <div class="cta-box">
+                <h2>Comienza tu camino hoy</h2>
+                <p>Reserva tu sesión con nuestros especialistas de manera sencilla.</p>
+                <a href="agenda.html" class="btn-primary">Agenda tu Cita</a>
+            </div>
+        </section>
     </main>
     
     <footer>
