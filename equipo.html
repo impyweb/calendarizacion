@@ -3,62 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestro Equipo</title>
+    <title>Nuestro Equipo | Mentalia - Clínica de Psicología Integral</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
 
     <header class="main-header">
         <nav class="nav-container">
             <div class="logo">
-                <span>Bienestar Mental</span>
+                <img src="images/logo.png" alt="Logo Mentalia" class="logo-img">
+                <span>Mentalia</span>
             </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="equipo.html" class="nav-link active">Nuestro Equipo</a></li>
-                    
-                    <li class="nav-item-dropdown">
-                        <a href="servicios.html" class="nav-link">Servicios <span class="flecha">▾</span></a>
-                        <ul class="submenu">
-                            <li><a href="individual.html">Psicoterapia Individual</a></li>
-                            <li><a href="estudiantes.html">Terapia para Estudiantes</a></li>
-                            <li><a href="talleres.html">Talleres</a></li>
-                        </ul>
-                    </li>
 
-                    <li><a href="agenda.html" class="nav-link">Agenda tu Cita</a></li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
-                </ul>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="equipo.html" class="nav-link active">Nuestro Equipo</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="servicios.html" class="nav-link">Servicios <span class="flecha">▾</span></a>
+                    <ul class="submenu">
+                        <li><a href="individual.html">Psicoterapia Individual</a></li>
+                        <li><a href="estudiantes.html">Terapia para Estudiantes</a></li>
+                        <li><a href="talleres.html">Talleres</a></li>
+                    </ul>
+                </li>
+                <li><a href="agenda.html" class="nav-link">Agenda tu Cita</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <section class="intro-section">
-            <h1>Nuestro Equipo</h1>
-            <h2>Acompañamiento profesional desde la comodidad de tu espacio.</h2>
-            
-            <p>
-                Página de
-                <strong>Nuestro Equipo</strong> un párrafo que describa más este servicio
-            </p>
+        <section class="hero-parallax" style="background-image: url('images/cabecera3.png');">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Nuestro Equipo</h1>
+                    <p>Profesionales comprometidas con tu bienestar integral</p>
+                </div>
+            </div>
+        </section>
 
+        <section class="container section-padding">
+            
+            <div class="split-section mb-5">
+                <div class="split-image">
+                    <img src="images/imagenv1.png" alt="Psicóloga Daniela Méndez Reyes">
+                </div>
+                <div class="split-content">
+                    <h2 class="editorial-title">Daniela Méndez Reyes</h2>
+                    <p class="italic mb-4">Psicóloga Clínica con Perspectiva de Género</p>
+                    <p>Licenciada por la Universidad La Salle Oaxaca y Maestra en Psicología Clínica por la UAQ, Daniela combina una sólida formación académica con una visión humana y empática.</p>
+                    <p>Se ha especializado en áreas críticas como la psicología criminal y la atención al maltrato infantil, además de contar con formación certificada por ONU Mujeres. Su enfoque se centra en brindar un espacio seguro y profesional para el crecimiento personal.</p>
+                </div>
+            </div>
+
+            <div class="split-section split-reverse mb-5">
+                <div class="split-image">
+                    <img src="images/imagenv1.png" alt="Psicóloga Tsoakjiele Sofia Moreno">
+                </div>
+                <div class="split-content">
+                    <h2 class="editorial-title">Tsoakjiele Sofia Moreno</h2>
+                    <p class="italic mb-4">Especialista en Tanatología y Resiliencia</p>
+                    <p>Licenciada por la Universidad Mondragón México, Sofia se especializa en acompañar procesos de pérdida y crisis. Su formación internacional en Tanatología por la Universidad Anáhuac y AEPSIS la avalan como una profesional experta en intervención en crisis.</p>
+                    <p>Además de su rigor clínico, integra enfoques innovadores como el vínculo entre mascotas y salud mental, buscando siempre la resiliencia y el equilibrio emocional de sus consultantes.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="bg-light section-padding">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="editorial-title">En Mentalia</h2>
+                    <p class="intro-text">La ética y la calidez humana son los pilares de nuestra práctica clínica.</p>
+                </div>
+                <div class="cards-section">
+                    <div class="card-vertical">
+                        <div class="card-text">
+                            <h3>Ética Profesional</h3>
+                            <p>Mantenemos los más altos estándares de confidencialidad y respeto, asegurando un entorno de absoluta confianza para nuestros pacientes.</p>
+                        </div>
+                    </div>
+                    <div class="card-vertical">
+                        <div class="card-text">
+                            <h3>Empatía y Calidez</h3>
+                            <p>No solo somos profesionales, somos personas acompañando a personas. Priorizamos el vínculo humano en cada sesión.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-preview container section-padding">
+            <div class="cta-box text-center">
+                <h2 class="editorial-title">Da el primer paso</h2>
+                <p class="intro-text mb-4">Reserva tu sesión con nuestras especialistas de manera sencilla y segura.</p>
+                <a href="agenda.html" class="btn-primary">Agenda tu Cita</a>
+            </div>
+        </section>
     </main>
+    
     <footer>
         <div class="footer-container">
-            <div class="footer-info">
-                <p>&copy; 2026 Todos los derechos reservados | Especialista en Bienestar Mental</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/mentaliamx?locale=es_LA" target="_blank" rel="noopener">
+                    <img src="images/face.png" alt="Facebook Mentalia" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/mentalia_psic/" target="_blank" rel="noopener">
+                    <img src="images/insta.png" alt="Instagram Mentalia" class="social-icon">
+                </a>
+                <a href="https://www.tiktok.com/@mentalia_psic?_t=ZS-8vyxa1Gy9pA&_r=1" target="_blank" rel="noopener">
+                    <img src="images/tik.png" alt="TikTok Mentalia" class="social-icon">
+                </a>
             </div>
+
             <nav class="footer-nav">
                 <a href="politicas.html">Política de Privacidad</a>
                 <a href="terminos.html">Términos y Condiciones</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
+
+            <div class="footer-info">
+                <p>&copy; 2026 Todos los derechos reservados | Mentalia</p>
+            </div>
         </div>
     </footer>
+
     <script src="js/script.js"></script>
 </body>
 </html>

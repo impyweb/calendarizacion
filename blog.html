@@ -3,62 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Blog | Mentalia - Clínica de Psicología Integral</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
 
     <header class="main-header">
         <nav class="nav-container">
             <div class="logo">
-                <span>Bienestar Mental</span>
+                <img src="images/logo.png" alt="Logo Mentalia" class="logo-img">
+                <span>Mentalia</span>
             </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="equipo.html" class="nav-link">Nuestro Equipo</a></li>
-                    
-                    <li class="nav-item-dropdown">
-                        <a href="servicios.html" class="nav-link">Servicios <span class="flecha">▾</span></a>
-                        <ul class="submenu">
-                            <li><a href="individual.html">Psicoterapia Individual</a></li>
-                            <li><a href="estudiantes.html">Terapia para Estudiantes</a></li>
-                            <li><a href="talleres.html">Talleres</a></li>
-                        </ul>
-                    </li>
 
-                    <li><a href="agenda.html" class="nav-link">Agenda tu Cita</a></li>
-                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
-                </ul>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="equipo.html" class="nav-link">Nuestro Equipo</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="servicios.html" class="nav-link">Servicios <span class="flecha">▾</span></a>
+                    <ul class="submenu">
+                        <li><a href="individual.html">Psicoterapia Individual</a></li>
+                        <li><a href="estudiantes.html">Terapia para Estudiantes</a></li>
+                        <li><a href="talleres.html">Talleres</a></li>
+                    </ul>
+                </li>
+                <li><a href="agenda.html" class="nav-link">Agenda tu Cita</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+            </ul>
         </nav>
     </header>
-
+    
     <main>
-        <section class="intro-section">
-            <h1>Blog</h1>
-            <h2>Acompañamiento profesional desde la comodidad de tu espacio.</h2>
-            
-            <p>
-                Página de
-                <strong>Blog</strong> un párrafo que describa más este servicio
-            </p>
+        <section class="hero-parallax" style="background-image: url('images/cabecera2.png');">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Blog</h1>
+                    <p>Información oficial y recursos para tu salud mental</p>
+                </div>
+            </div>
+        </section>
 
+        <section class="container section-padding">
+            <div class="text-center mb-5">
+                <h2 class="editorial-title">Recursos Informativos</h2>
+                <p class="intro-text">
+                    Explora temas clave sobre salud mental con datos oficiales de la 
+                    Organización Mundial de la Salud (OMS).
+                </p>
+            </div>
+
+            <div class="cards-section">
+                <article class="card-vertical">
+                    <div class="card-image-wrapper">
+                        <img src="images/imagenh2.png" alt="Trastornos de ansiedad">
+                    </div>
+                    <div class="card-text">
+                        <p class="italic">8 de septiembre de 2025</p>
+                        <h3>Trastornos de ansiedad</h3>
+                        <p>Los trastornos de ansiedad se caracterizan por un miedo y una preocupación excesivos y por trastornos del comportamiento conexos.</p>
+                        <a href="https://www.who.int/es/news-room/fact-sheets/detail/anxiety-disorders" target="_blank" class="nav-link" style="padding: 0; color: var(--primary-color); font-weight: bold;">Leer en OMS →</a>
+                    </div>
+                </article>
+
+                <article class="card-vertical">
+                    <div class="card-image-wrapper">
+                        <img src="images/imagenh3.png" alt="Trastorno bipolar">
+                    </div>
+                    <div class="card-text">
+                        <p class="italic">8 de septiembre de 2025</p>
+                        <h3>Trastorno bipolar</h3>
+                        <p>Las personas con trastorno bipolar experimentan episodios alternos de síntomas depresivos y episodios maníacos.</p>
+                        <a href="https://www.who.int/es/news-room/fact-sheets/detail/bipolar-disorder" target="_blank" class="nav-link" style="padding: 0; color: var(--primary-color); font-weight: bold;">Leer en OMS →</a>
+                    </div>
+                </article>
+
+                <article class="card-vertical">
+                    <div class="card-image-wrapper">
+                        <img src="images/imagenh4.png" alt="Trastorno depresivo">
+                    </div>
+                    <div class="card-text">
+                        <p class="italic">29 de agosto de 2025</p>
+                        <h3>Trastorno depresivo (depresión)</h3>
+                        <p>La depresión es algo más que las variaciones habituales del estado de ánimo y las respuestas emocionales breves a los problemas de la vida cotidiana.</p>
+                        <a href="https://www.who.int/es/news-room/fact-sheets/detail/depression" target="_blank" class="nav-link" style="padding: 0; color: var(--primary-color); font-weight: bold;">Leer en OMS →</a>
+                    </div>
+                </article>
+
+                <article class="card-vertical">
+                    <div class="card-image-wrapper">
+                        <img src="images/imagenh5.png" alt="Trastornos mentales">
+                    </div>
+                    <div class="card-text">
+                        <p class="italic">30 de septiembre de 2025</p>
+                        <h3>Trastornos mentales</h3>
+                        <p>Una descripción general de los diversos trastornos, sus causas y la importancia de la atención integral para quienes los padecen.</p>
+                        <a href="https://www.who.int/es/news-room/fact-sheets/detail/mental-disorders" target="_blank" class="nav-link" style="padding: 0; color: var(--primary-color); font-weight: bold;">Leer en OMS →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="booking-preview container section-padding">
+            <div class="cta-box text-center">
+                <h2 class="editorial-title">Da el primer paso</h2>
+                <p class="intro-text mb-4">Reserva tu sesión con nuestras especialistas de manera sencilla y segura.</p>
+                <a href="agenda.html" class="btn-primary">Agenda tu Cita</a>
+            </div>
+        </section>
     </main>
+
     <footer>
         <div class="footer-container">
-            <div class="footer-info">
-                <p>&copy; 2026 Todos los derechos reservados | Especialista en Bienestar Mental</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/mentaliamx?locale=es_LA" target="_blank" rel="noopener">
+                    <img src="images/face.png" alt="Facebook Mentalia" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/mentalia_psic/" target="_blank" rel="noopener">
+                    <img src="images/insta.png" alt="Instagram Mentalia" class="social-icon">
+                </a>
+                <a href="https://www.tiktok.com/@mentalia_psic?_t=ZS-8vyxa1Gy9pA&_r=1" target="_blank" rel="noopener">
+                    <img src="images/tik.png" alt="TikTok Mentalia" class="social-icon">
+                </a>
             </div>
+
             <nav class="footer-nav">
                 <a href="politicas.html">Política de Privacidad</a>
                 <a href="terminos.html">Términos y Condiciones</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
+
+            <div class="footer-info">
+                <p>&copy; 2026 Todos los derechos reservados | Mentalia</p>
+            </div>
         </div>
     </footer>
+
     <script src="js/script.js"></script>
 </body>
 </html>
