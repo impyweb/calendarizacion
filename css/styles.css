@@ -233,12 +233,13 @@ img {
     letter-spacing: 1px;
 }
 
-
 /* =========================================
    4. COMPONENTES DE DISEÑO (INDEX, EQUIPO, AGENDA & BLOG)
    ========================================= */
 
-/* --- 4.1. Bloques de Texto y Bienvenida --- */
+/* ================================
+   4.1 BLOQUES DE TEXTO Y SECCIONES BASE
+================================ */
 .welcome-section {
     text-align: center;
     padding: 60px 20px;
@@ -273,8 +274,11 @@ img {
     font-style: italic;
     color: var(--accent-color);
 }
+/* ================================
+   4.2 SECCIONES SPLIT (LAYOUT)
+================================ */
 
-/* --- 4.2. Secciones Divididas (Split) --- */
+/* Contenedor base: En móvil siempre es una columna */
 .split-section {
     display: flex;
     flex-direction: column; 
@@ -294,7 +298,7 @@ img {
     line-height: 1.7;
 }
 
-/* Tratamiento de imagen editorial unificado (Index y Equipo) */
+/* Tratamiento de imagen editorial unificado */
 .split-image img {
     width: 100%;
     aspect-ratio: 4 / 5; /* Formato retrato editorial */
@@ -302,13 +306,15 @@ img {
     border-radius: 4px;
     box-shadow: var(--shadow);
     display: block;
-    filter: sepia(8%); /* Sutil calidez para humanizar perfiles */
+    filter: sepia(8%); /* Calidez para humanizar perfiles */
 }
 
-/* --- 4.3. Tarjetas (Misión, Visión, Valores) --- */
+/* ================================
+   4.3 TARJETAS (GRID COMPONENTE)
+================================ */
 .cards-section {
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     gap: 40px;
 }
 
@@ -317,13 +323,27 @@ img {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    max-width: 450px; 
+    margin: 0 auto;
+}
+
+.card-image-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
 }
 
 .card-image-wrapper img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
     display: block;
+    /* Zoom del 20% para asegurar que las orillas se salgan del cuadro */
+    transform: scale(1.2);
+    /* Centramos el zoom para que recorte uniformemente los cuatro lados */
+    transform-origin: center;
+    filter: sepia(8%);
 }
 
 .card-text {
@@ -336,7 +356,9 @@ img {
     font-size: 1.5rem;
 }
 
-/* --- 4.4. Botones y Call to Action (CTA) --- */
+/* ================================
+   4.4 BOTONES Y CTA
+================================ */
 .btn-primary {
     display: inline-block;
     padding: 14px 35px;
@@ -344,9 +366,9 @@ img {
     color: var(--white);
     text-decoration: none;
     border-radius: 4px;
-    transition: var(--transition);
     font-weight: 500;
     min-height: 44px;
+    transition: var(--transition);
 }
 
 .btn-primary:hover {
@@ -360,47 +382,262 @@ img {
     border-radius: 12px;
 }
 
-/* --- 4.5. Integraciones Externas (Agenda y Formularios) --- */
-.iframe-wrapper {
+
+/* ================================
+   4.5 COMPONENTES EMBEBIDOS (IFRAMES)
+================================ */
+.embed-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
     border-radius: 8px;
     background-color: var(--white);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.iframe-wrapper iframe {
+.embed-container iframe {
     width: 100%;
     display: block;
 }
 
-.calendly-container {
-    width: 100%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+.embed-container--small {
+    max-width: 800px;
 }
 
-/* --- 4.6. Configuración de Blog y Feeds --- */
+
+/* ================================
+   4.6 BLOG Y FEEDS
+================================ */
 .blog-feed-container {
     width: 100%;
     margin-bottom: 2rem;
 }
 
-.blog-feed-container .iframe-wrapper {
+.blog-feed-container iframe {
+    width: 100%;
     border: 1px solid #eee;
-    -webkit-overflow-scrolling: touch; /* Scroll fluido en dispositivos móviles */
+    -webkit-overflow-scrolling: touch;
+    display: block;
 }
 
-/* Utilitarios de espaciado y alineación */
-.text-center { text-align: center; }
-.mb-4 { margin-bottom: 2rem; }
-.mb-5 { margin-bottom: 3rem; }
-.mt-4 { margin-top: 2rem; }
-.mt-5 { margin-top: 3rem; }
+
+/* ================================
+   4.7 UTILIDADES DE ESPACIADO
+================================ */
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+/* ================================
+   4.8 CARRUSEL (SERVICIOS INTEGRADOS)
+================================ */
+
+/* Contenedor principal adaptable */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Altura ideal para leer el texto en móvil */
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Enlace que envuelve toda la diapositiva */
+.carousel-link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Imagen con zoom para ocultar marcas de agua y dar profundidad */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(5%) brightness(0.85); /* Un poco más oscuro para que el texto resalte */
+    transform: scale(1.15);
+    transform-origin: center;
+    transition: transform 0.5s ease;
+}
+
+.carousel-link:hover img {
+    transform: scale(1.2); /* Efecto sutil al pasar el mouse */
+}
+
+/* Pie de foto editorial (Información de la tarjeta) */
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 60px 30px 40px;
+    /* Degradado de negro a transparente para legibilidad total */
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+    text-align: center;
+    z-index: 4;
+}
+
+.carousel-caption h3 {
+    font-family: 'PT Serif', serif;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.carousel-caption p {
+    font-family: 'Jura', sans-serif;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.click-hint {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 2px;
+}
+
+/* Botones de navegación minimalistas */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    color: var(--white);
+    border: none;
+    font-size: 1.2rem;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+}
+
+.carousel-btn.prev { left: 15px; }
+.carousel-btn.next { right: 15px; }
+
+/* Overlay de seguridad */
+.carousel-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Ajuste para Desktop (Sección 6 integrada conceptualmente) */
+@media (min-width: 768px) {
+    .carousel-container {
+        height: 650px;
+    }
+    .carousel-caption h3 {
+        font-size: 2.5rem;
+    }
+    .carousel-caption p {
+        font-size: 1.2rem;
+    }
+}
+
+/* ================================
+   4.9 GALERÍA DÚO (TALLERES)
+================================ */
+
+.dual-gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* Por defecto 1 columna (móvil) */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Altura fija para que coincidan */
+    object-fit: cover;
+    border-radius: 4px;
+    filter: sepia(15%) brightness(0.9); /* Estética Mentalia */
+    transition: transform 0.5s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+}
+
+.gallery-description {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gallery-description p {
+    font-family: 'Jura', sans-serif;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+/* Versión Laptop / Tablet */
+@media (min-width: 768px) {
+    .dual-gallery {
+        grid-template-columns: 1fr 1fr; /* Dos imágenes en el mismo eje */
+    }
+    
+    .gallery-item img {
+        height: 400px; /* Más altura en pantallas grandes */
+    }
+}
+
+/* Utilidad para limitar el ancho del texto introductorio */
+.max-width-700 {
+    max-width: 700px;
+    margin: 0 auto;
+}
 
 /* =========================================
    5. FOOTER
@@ -475,35 +712,52 @@ footer {
     margin-top: 10px;
     line-height: 1.4;
 }
+
 /* =========================================
-   6. MEDIA QUERIES (DESKTOP & TABLET)
+   6. MEDIA QUERIES (RESPONSIVE DESIGN)
    ========================================= */
 
-/* Tabletas y Escritorio (768px en adelante) */
+/* ================================
+   BASE: MÓVIL (hasta 767px)
+================================ */
+@media (max-width: 767px) {
+    .blog-feed-container iframe {
+        height: 600px !important; 
+    }
+
+    .editorial-title {
+        font-size: 1.8rem; 
+    }
+}
+
+
+/* ================================
+   TABLET Y ESCRITORIO (768px+)
+================================ */
 @media (min-width: 768px) {
-    
-    /* 6.1. Navegación y Menú Desktop */
-    .hamburger { 
-        display: none; 
+
+    /* 6.1 Navegación */
+    .hamburger {
+        display: none;
     }
 
     .nav-menu {
         position: static;
+        display: flex;
         flex-direction: row;
         width: auto;
         height: auto;
+        gap: 30px;
         background-color: transparent;
         box-shadow: none;
-        gap: 30px;
         right: auto;
-        display: flex;
     }
 
-    .nav-link { 
-        font-size: 0.95rem; 
+    .nav-link {
+        font-size: 0.95rem;
     }
 
-    /* 6.2. Submenú Dropdown Desktop */
+    /* Dropdown */
     .nav-item-dropdown {
         position: relative;
     }
@@ -527,8 +781,8 @@ footer {
     }
 
     .submenu li a {
-        padding: 10px 20px;
         display: block;
+        padding: 10px 20px;
         font-size: 0.9rem;
         color: var(--text-color);
         transition: background 0.3s ease;
@@ -539,52 +793,71 @@ footer {
         color: var(--primary-color);
     }
 
-    /* 6.3. Hero, Contenido e Integraciones */
+    /* 6.2 Hero */
     .hero-parallax {
         height: 80vh;
-        background-attachment: fixed; /* Efecto Parallax activo en Desktop */
+        background-attachment: fixed;
     }
 
-    .hero-content h1 { 
-        font-size: 4rem; 
+    .hero-content h1 {
+        font-size: 4rem;
     }
 
+    /* 6.3 Layout general */
     .split-section {
+        display: flex;
         flex-direction: row;
-        text-align: left;
         gap: 60px;
         align-items: center;
+        text-align: left;
     }
 
-    .split-content, 
+    .split-content,
     .split-image {
         flex: 1;
     }
 
-    /* Inversión de imagen/texto para diseño editorial */
     .split-reverse {
-        flex-direction: row-reverse;
+        flex-direction: row-reverse !important;
     }
 
-    /* Tarjetas en 2 columnas (Misión/Visión y Valores) */
+    /* Cards (ADAPTABLE: Funciona para 2 o 3 tarjetas) */
     .cards-section {
-        grid-template-columns: 1fr 1fr;
+        display: grid;
+        /* auto-fit permite que las tarjetas se acomoden solas según el número que haya */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
         gap: 30px;
+        justify-content: center; 
+        max-width: 1100px; 
+        margin: 0 auto;          
     }
 
-    /* Ajuste de altura para el blog en desktop */
+    /* Blog */
     .blog-feed-container iframe {
         height: 900px !important;
     }
 
-    /* Refuerzo para Agenda y Blog: Ancho controlado */
-    .iframe-wrapper, 
+    /* Contenedores centrados (Forms y Calendly) */
+    .iframe-wrapper,
     .calendly-container {
-        max-width: 700px;
+        max-width: 800px; 
+        margin: 0 auto;   
+        border-radius: 8px;
+        overflow: hidden; 
     }
 
-    /* 6.4. Footer Desktop (Distribución horizontal) */
+    .calendly-inline-widget {
+        width: 100%;
+    }
+
+    /* Carrusel de Servicios */
+    .carousel-container {
+        height: 550px;
+    }
+
+    /* 6.4 Footer */
     .footer-container {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -592,30 +865,39 @@ footer {
     }
 
     .footer-info {
-        order: 1; 
         flex: 1;
+        order: 1;
     }
 
     .footer-nav {
-        order: 2; 
         flex: 1;
+        order: 2;
         justify-content: center;
     }
 
     .footer-social {
-        order: 3; 
         flex: 1;
+        order: 3;
         justify-content: flex-end;
+    }
+
+    /* Carrusel */
+    .carousel-container {
+        height: 550px;
     }
 }
 
-/* Monitores Grandes (1024px en adelante) */
+
+/* ================================
+   DESKTOP GRANDE (1024px+)
+================================ */
 @media (min-width: 1024px) {
+
     .container {
         padding-top: 100px;
         padding-bottom: 100px;
     }
-    
+
     .hero-content h1 {
         font-size: 5rem;
     }
@@ -625,13 +907,95 @@ footer {
     }
 }
 
-/* Ajustes específicos para Móvil (Debajo de 768px) */
-@media (max-width: 767px) {
-    .blog-feed-container iframe {
-        height: 600px !important; 
-    }
-    
-    .editorial-title {
-        font-size: 1.8rem; 
+/* ================================
+   7. CONTACTO (ESTILOS ESPECÍFICOS)
+================================ */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.method-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    filter: sepia(10%); /* Mantiene la estética Mentalia */
+}
+
+.method-item h4 {
+    font-family: 'PT Serif', serif;
+    color: var(--primary-color);
+    margin-bottom: 2px;
+    font-size: 1.1rem;
+}
+
+.method-item p, .method-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.method-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Pastillas de Redes Sociales */
+.social-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.social-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-family: 'Jura', sans-serif;
+    transition: var(--transition);
+}
+
+.social-pill img {
+    width: 20px;
+    height: 20px;
+}
+
+.social-pill:hover {
+    background: var(--bg-light);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Contenedor TikTok */
+.tiktok-container {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive para Laptop */
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
